@@ -41,10 +41,10 @@ for z in zip_path:
             zipfile.ZipFile(z).extract("S001/" + i, "./Middle/" + c)
             zipfile.ZipFile(z).extract("S001/" + t, "./Middle/" + c)
     
-    # crop
+    # face crop
     for j, c in enumerate(person):
-        imgs = glob.glob("AI_HUB/" + c + "/*/*/*/*.jpg")
-        txts = glob.glob("AI_HUB/" + c + "/*/*/*/*.txt")
+        imgs = glob.glob("data/" + c + "/*/*/*/*.jpg")
+        txts = glob.glob("data/" + c + "/*/*/*/*.txt")
 
         for i, (img, txt) in enumerate(zip(imgs, txts)):
             name = str(i)
@@ -58,12 +58,12 @@ for z in zip_path:
                 img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
                 if j >= 390:
-                    base_val = "face_valid/" + str(j - 390)
+                    base_val = "valid/" + str(j - 390)
                     if not os.path.exists(base_val):
                         os.makedirs(base_val)
                     Image.fromarray(img).save(os.path.join(base_val, str(j-390) + '_' + name) + '.jpg')
                 else:
-                    base = "face_train/" + str(j)
+                    base = "train/" + str(j)
 
                     if not os.path.exists(base):
                         os.makedirs(base)
