@@ -16,7 +16,7 @@ training_epochs = 200
 batch_size = 2
 n_mfcc = 128
 
-def load_wave_generator(path):
+def preprocessing(path):
     global X_train, X_test, Y_train, Y_test, tf_classes
     X_train, Y_train = [], []
     X_test, Y_test = [], []
@@ -24,7 +24,7 @@ def load_wave_generator(path):
     X_data = []
     Y_label = []
 
-    folders = sorted(list(set(os.listdir(path)) - set(['.ipynb_checkpoints'])))
+    # folders = sorted(list(set(os.listdir(path)) - set(['.ipynb_checkpoints'])))
     print("Speaker's ID", folders)
 
     tf_classes = 0
@@ -61,7 +61,7 @@ def load_wave_generator(path):
 
 class NeuralNetwork:
     def __init__(self):
-        tf.random.set_random_seed(777)
+        tf.random.set_random_seed(99)
         tf.compat.v1.disable_eager_execution()
         tf.compat.v1.reset_default_graph()
 
@@ -141,7 +141,7 @@ class NeuralNetwork:
 
 
 if __name__ == '__main__':
-    load_wave_generator(DATA_TRAIN_PATH)
+    preprocessing(DATA_TRAIN_PATH)
 
     X_train, X_test, Y_train, Y_test = np.load("./data.npy", allow_pickle=True)
     X_train = X_train.astype("float32")
