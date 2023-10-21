@@ -8,7 +8,7 @@ from tqdm import tqdm
 
 # 액세서리는 비착용 1종에 대해서만 수행
 # 인물.zip > 액세서리 S (6가지) > 조명 세기 및 방향 L (30가지) > 표정 E (3가지) > 각도 C (20가지)
-zip_path = glob.glob("./Middle_Resolution/*.zip") # KFACE zip 파일 경로 작성
+zip_path = glob.glob("../data/Middle_Resolution/*.zip") # KFACE zip 파일 경로 작성
 
 person = []
 for z in zip_path:
@@ -43,8 +43,8 @@ for z in zip_path:
     
     # face crop
     for j, c in enumerate(person):
-        imgs = glob.glob("data/" + c + "/*/*/*/*.jpg")
-        txts = glob.glob("data/" + c + "/*/*/*/*.txt")
+        imgs = glob.glob("../data/" + c + "/*/*/*/*.jpg")
+        txts = glob.glob("../data/" + c + "/*/*/*/*.txt")
 
         for i, (img, txt) in enumerate(zip(imgs, txts)):
             name = str(i)
