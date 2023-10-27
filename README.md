@@ -6,8 +6,7 @@
 - 20201740 송가은
 
 ## <u>Teamate</u> Project Background
-- ### 필요성! [스크린샷 2023-10-27 211905](https://github.com/HBNU-SWUNIV/come-capstone23-framerun/assets/123061106/5a3119ec-695c-46f2-aede-43e7eabf853c)
-
+- ### 필요성 ![스크린샷 2023-10-27 211905](https://github.com/HBNU-SWUNIV/come-capstone23-framerun/assets/123061106/5a3119ec-695c-46f2-aede-43e7eabf853c)
   - 통계청에 의하면 전체 가구중 1인 가구가 차지하는 비중 2030년에 35.6%, 2050년에 39.6%에 이른다고 전망
   - 여성가족부가 발표한 자료에 따르면 여성 1인 가구의 비중 2020년에 약 334만 가구로 2010년에 비해 1.5배, 20년 전과 비교했을 때 2.6배 증가
   - 지금의 증가 추세가 지속된다면 10년 후에는 전체 가구의 20%, 즉 다섯 가구 중 한 가구는 여성 1인 가구가 될 것이란 전망
