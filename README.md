@@ -15,8 +15,8 @@
   
 ## System Design
   - ### System Requirements
-    - OOO
-    - OOO
+![image](https://github.com/HBNU-SWUNIV/come-capstone23-framerun/assets/123061106/bedbb1a4-0dd1-44b5-b045-8b6d92f3b9d4)
+
     
 ## Case Study
   - ### Description
