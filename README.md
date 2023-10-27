@@ -7,7 +7,7 @@
 
 ## <u>Teamate</u> Project Background
 - ### 필요성
-  ![image](https://github.com/HBNU-SWUNIV/come-capstone23-framerun/assets/123061106/d113dcaf-fa7e-444a-940d-f2ee1b08d30b)
+![스크린샷 2023-10-27 211905](https://github.com/HBNU-SWUNIV/come-capstone23-framerun/assets/123061106/ff0ae705-4841-4e85-acc1-b7b3b91827d2)
   -  
 
 - ### 기존 해결책의 문제점
