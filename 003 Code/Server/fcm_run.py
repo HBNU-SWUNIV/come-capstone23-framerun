@@ -38,7 +38,6 @@ def fcm_run(file, registration_token):
             'title': '도어락 외부인 접근 알림',
             # jpg 파일 이름을 어플로 넘김. -> 파이어베이스에서 사진 가져올 것(어플)
             'body': name_to_datetime(file),
-            #'body': "ㅎㅇ",
             'image': file,
         },
         token=registration_token,
