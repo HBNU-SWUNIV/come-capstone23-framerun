@@ -1,6 +1,7 @@
 1) Doorlock_Operation.py
    -
-   ddd
+   - 도어락을 제어하는 코드
+   - 
 3) check_network_connection.py
 4) compare_passwords.py
 5) excute_camera.py
