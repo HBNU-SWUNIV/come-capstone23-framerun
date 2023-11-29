@@ -27,22 +27,9 @@ from split_audio_file import split_audio_file
 
 from flask import Blueprint
 
-'''원격: 14.50.214.100:9003, 내부: 127.0.0.1:5000'''
-# face_vectorURL = 'http://192.168.0.5:5000/join_face/get_face_vector'
-# vector_URL = 'http://192.168.0.4:5000/join_user/get_vector'
-
-vector_URL = 'http://192.168.0.5:5000/join_user/getvector'
+vector_URL = 'http://Ip주소/join_user/getvector'
 
 # # '''model (사전 학습 가중치 + 모델 호출)'''
-# device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-# weight = 'kface.r34.arc.unpg.wisk1.0.pt'
-# ckpt = torch.load(weight, map_location=device)  # load checkpoint
-
-# model = ckpt['backbone'].to(device)
-# model = DataParallel(model)
-
-
-#####
 # device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 # weight = 'kface.r34.arc.unpg.wisk1.0.pt'
 # ckpt = torch.load(weight, map_location=device)  # load checkpoint
@@ -180,8 +167,8 @@ def join_user():
 
                 try:
                     print("ss")
-                    # split_audio_file(input_file, output_path, name) -> ex. minji_0.wav , minji_1.wav
-                    # split_audio_file(voice_folder +'/' + filename, voice_folder, user_name) # split_audio_file.py
+                    # split_audio_file(input_file, output_path, name) -> minji_0.wav , minji_1.wav
+                    split_audio_file(voice_folder +'/' + filename, voice_folder, user_name) # split_audio_file.py
                 except Exception as e:
                     fcm_noti("사용자 등록 실패@", "")
                     return 'fail', 500
@@ -201,103 +188,34 @@ def join_user():
 
             print(img_folder_path)
             print(user_name)
-            option = 1
-            face_vvector()
+            
             # response = requests.post(vector_URL)
-
+            
             # /join_user/get_vector로 이동
-            # if response.text == "1":
             # if response.status_code == 200:
             #     fcm_noti("사용자 등록 완료1","")
             #     return 'successful' , 200
             # else:
             #     fcm_noti("사용자 등록 실패1","")
             #     return 'fail' , 500
-        return 'done'
+            # requests.post('http://192.168.0.5:5000/join_face/getvector' + '?user_name=' + user_name)
 
     except Exception as e:
         print(e)
         fcm_noti("사용자 등록 실패 ss", "")
         return 'fail', 500
     
-    # else:
-    #     print(user_name + "'s files downloaded successfully.")
+    else:
+        print(user_name + "'s files downloaded successfully.")
         
-    #     response = requests.post(vector_URL)
+        response = requests.post(vector_URL)
 
-    #     # /join_user/get_vector로 이동
-    #     # if response.text == "1":
-    #     if response.status_code == 200:
-    #         fcm_noti("사용자 등록 완료1","")
-    #         return 'successful' , 200
-    #     else:
-    #         fcm_noti("사용자 등록 실패1","")
-    #         return 'fail' , 500
-    
-    #     print("DDDDD") 지우기
-    #     return 200 지우기
-    # return 200 지우기
-
-# 1-2. 받은 사용자 사진으로 벡터값 저장
-@bp.route('/join_user/getvector', methods=['POST', 'GET'])  # ★ POST 변경
-def face_vector():
-    print("<<Get Vector>>")
-    t1 = datetime.now()
-    pic = []
-
-    for root, dirs, files in os.walk(img_folder_path):
-        for file in files:
-            
-            # print(file.name)############
-            file_path = posixpath.join(root, file)
-            print(file_path)
-            pic.append(file_path)
-
-    '''얼굴 특징 벡터 추출'''
-
-    # 벡터값 계산
-    v = {}
-    index = 1  # 벡터값 인덱스
-    cnt = 0  # 벡터값 저장 성공 카운트
-
-    for p in pic:
-        print("--------")
-        image = cv2.imread(p)
-        obj = RetinaFace.detect_faces(p)
-        print("--------")
-        try:
-            for key in obj.keys():
-                identity = obj[key]
-                facial_area = identity["facial_area"]
-                crop_image = image[facial_area[1]
-                    :facial_area[3], facial_area[0]:facial_area[2]]
-
-            feature = getFeature(model, crop_image)  # 얼굴의 특징 벡터 추출 getfeature.py
-            v[p] = feature
-
-            # npy 파일로 저장하기
-            print("--------")
-            np.save('./user/face_npy/' + user_name + str(index) + '.npy', feature)
-
-            print(index, "벡터값 저장 성공")
-            index += 1
-            cnt += 1
-        except AttributeError:
-            print(index, "벡터값 저장 실패")
-            index += 1
-            continue
-    t2 = datetime.now()
-
-
-    print('벡터값 계산 및 저장 소요 시간:', t2-t1)
-    print('%d장 사진 중, %d개 벡터값 저장' % (len(pic), cnt))
-
-    fcm_noti("사용자 얼굴 등록 완료 $$","")
-
-    print("Join Face Done!")
-
-    return 'Join Face Done!'
-
+        if response.status_code == 200:
+            fcm_noti("사용자 등록 완료","")
+            return 'successful' , 200
+        else:
+            fcm_noti("사용자 등록 실패","")
+            return 'fail' , 500
 
 # 2. 사진 및 음성 파일 벡터값 추출하기
 @bp.route('/join_user/get_vector', methods=['GET', 'POST']) # ★ POST 변경
@@ -305,22 +223,8 @@ def get_vector():
 
     try:
         print("<<Get Face Vector>>")
-        # # pic = []
-
-        # # for root, dirs, files in os.walk(img_folder_path):
-        # #         for file in files:
-        # #             file_path = posixpath.join(root, file)
-        # #             pic.append(file_path)
-
-        # # face_vector(img_folder_path, user_name, 1)
-        # img_folder_path = os.path.join('C:/Framerun/user/', user_name)
-        # print("img_folder_path:", img_folder_path)
-        # print("user_name: ", user_name)
-        # face_vector(img_folder_path, user_name, 1)
+    
         face_vector(img_folder_path, user_name, 1)
-
-        
-
 
     except Exception as e:
         print(e)
