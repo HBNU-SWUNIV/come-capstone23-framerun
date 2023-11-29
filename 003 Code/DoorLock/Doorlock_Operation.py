@@ -25,7 +25,7 @@ GPIO.setwarnings(False)
 
 """Var Setting"""
 img_type = "jpg"
-URL = "http://ip주소소/"
+URL = "http://ip주소/"
 mode_check_URL = URL + "mode_check"
 run_face_URL = URL + "run_face"
 fcm_send_URL = URL + "fcm_send?file_name="
