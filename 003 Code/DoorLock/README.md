@@ -1,3 +1,5 @@
+
+
 Doorlock_Operation.py
 - 
 - Raspberry pi 4 model B
@@ -18,4 +20,5 @@ keypad.py
 doorlock_control.py
 -
 - 구형 도어락 open/close 버튼 ->  점프선을 이용하여 솔더링
+
 
