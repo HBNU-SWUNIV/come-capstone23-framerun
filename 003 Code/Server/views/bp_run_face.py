@@ -28,7 +28,7 @@ mode2_edit_URL = 'http://Ip 주소/mode2_edit'
 
 # '''model (사전 학습 가중치 + 모델 호출)'''
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-weight = 'kface.r34.arc.unpg.wisk1.0.pt'
+weight = weight.pt 
 ckpt = torch.load(weight, map_location=device)  # load checkpoint
 
 model = ckpt['backbone'].to(device)
