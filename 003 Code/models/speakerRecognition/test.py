@@ -13,9 +13,9 @@ if __name__ == '__main__':
         elif 4 < user_num <=7:
             th = 0.80
         elif 2 < user_num <= 4:
-            th = 0.95
+            th = 0.85
         elif user_num <= 2:
-            th = 0.97
+            th = 0.90
             
         saver = tf.train.import_meta_graph('./checkpoint/best.meta')  # 모델 메타데이터 불러오기
         saver.restore(sess, tf.train.latest_checkpoint('./checkpoint'))  # 체크포인트 복원
@@ -42,7 +42,8 @@ if __name__ == '__main__':
         
         acc = predict[predict_id]/len(X_test)
         print(acc)
-        print(th)
+        # print(th)
+        
         if acc > th:
             print(f"\n{predict_id} 님, 인증되었습니다!")
         else:
