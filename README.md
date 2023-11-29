@@ -42,8 +42,8 @@
   - ### 도어락에 그치지 않고, 보안이 필요한 다양한 물품에 부착하여 잠금 장치로 사용 가능
   
 ## Project Outcome
+* 한밭대학교 컴퓨터공학과 작품집 및 족자
+* ![image](https://github.com/HBNU-SWUNIV/come-capstone23-framerun/assets/127067076/6eda0cfc-a9d7-4441-a08e-3230c168f340)
 
 ![image](https://github.com/HBNU-SWUNIV/come-capstone23-framerun/assets/127067076/53c7ea66-edfc-4c20-b678-0d94375bdf10)
 ![image](https://github.com/HBNU-SWUNIV/come-capstone23-framerun/assets/127067076/a9661e83-3ff3-4b63-9153-4e280d959c11)
-
-* 한밭대학교 컴퓨터공학과 작품집 및 족자
