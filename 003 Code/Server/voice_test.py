@@ -40,7 +40,7 @@ def voice_test(filepath):
             # acc_list = predict / len(X_test)
             # print(acc_list)
     
-            if acc > 0.50:
+            if acc > 0.80:
                 print("open")
                 return "success"
             else:
