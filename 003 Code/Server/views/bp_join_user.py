@@ -28,16 +28,6 @@ from split_audio_file import split_audio_file
 from flask import Blueprint
 
 vector_URL = 'http://Ip주소/join_user/getvector'
-
-# # '''model (사전 학습 가중치 + 모델 호출)'''
-# device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-# weight = 'kface.r34.arc.unpg.wisk1.0.pt'
-# ckpt = torch.load(weight, map_location=device)  # load checkpoint
-
-# model = ckpt['backbone'].to(device)
-# model = DataParallel(model)
-
-# '''
 def face_vvector():
     # num: 0-> 얼굴 인식 1-> 사용자 등록
 
