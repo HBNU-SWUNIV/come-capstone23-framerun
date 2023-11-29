@@ -21,8 +21,7 @@ import posixpath
 from flask import Blueprint
 from voice_test import voice_test
 
-URL = 'http://14.50.214.100:9003/'
-mode2_edit_URL = 'http://192.168.0.4:5000/mode2_edit'
+mode2_edit_URL = 'http://IP 주소/mode2_edit'
 test_path = 'c:/FRAMERUN/voice_run/data/test/'
 
 
