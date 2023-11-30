@@ -7,6 +7,7 @@ Doorlock_Operation.py
 - 초음파 센서
 - RGB LED 센서
 - 4x3 keypad
+- password hashing function : Bcrypt
  
 compare_passwords.py
 - 
