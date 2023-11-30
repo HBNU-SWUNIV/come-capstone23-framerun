@@ -36,16 +36,3 @@ def face_run_step(filepath):
     # 경로 삭제
     with open('./webserver/face_path.txt', 'w') as file:
         file.truncate(0)
-
-if __name__ == '__main__':
-
-    # filepath = 'C:/Framerun/sensor_img/20231129_045538.jpg'
-    # HA(filepath)
-            with open(r"C:\Framerun\webserver\mode.json", "r") as file:
-                mode_data = json.load(file)
-
-            if mode_data['mode'] == "mode_2":
-                mode_data["face"] = "success"
-
-            with open(r"C:\Framerun\webserver\mode.json", "w") as file:
-                json.dump(mode_data, file)
