@@ -25,8 +25,7 @@ with open("./webserver/face_path.txt", "r") as file:
     filepath = file.read().strip()
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-# weight = 'kface.r34.arc.unpg.wisk1.0.pt' 
-weight = 'C:\Framerun\kface.r34.arc.unpg.wisk1.0.pt'
+weight = weight.pt 파일
 ckpt = torch.load(weight, map_location=device)  # load checkpoint
 
 model = ckpt['backbone'].to(device)
