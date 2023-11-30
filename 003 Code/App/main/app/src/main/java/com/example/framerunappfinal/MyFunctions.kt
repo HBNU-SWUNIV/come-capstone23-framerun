@@ -26,7 +26,7 @@ import java.nio.ByteOrder
 
 class MyGlobals {
     companion object {
-        val BASE_URL = "http://192.168.0.5:5000/"
+        val BASE_URL = "url입력"
     }
 }
 
