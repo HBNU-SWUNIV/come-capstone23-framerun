@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/navigation_userRegistraton">
+
+    <fragment
+        android:id="@+id/navigation_userRegistraton"
+        android:name="com.example.framerunappfinal.UserRegistration.UserRegistrationFragment"
+        android:label="사용자등록"
+        tools:layout="@layout/fragment_user_registration2" />
+
+    <fragment
+        android:id="@+id/navigation_passwordMode"
+        android:name="com.example.framerunappfinal.PasswordMode.PasswordModeFragment"
+        android:label="잠금모드"
+        tools:layout="@layout/fragment_password_mode" />
+
+    <fragment
+        android:id="@+id/navigation_checkVisitor"
+        android:name="com.example.framerunappfinal.CheckVisitor.CheckVisitorFragment"
+        android:label="방문자확인"
+        tools:layout="@layout/fragment_check_visitor" />
+
+    <fragment
+        android:id="@+id/navigation_wordOfTheDay"
+        android:name="com.example.framerunappfinal.WordOfTheDay.WordOfThedayFragment"
+        android:label="화자인식"
+        tools:layout="@layout/fragment_word_of_theday" />
+
+
+
+
+
+</navigation>
