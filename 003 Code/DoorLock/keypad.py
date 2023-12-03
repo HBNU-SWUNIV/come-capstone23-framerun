@@ -1,4 +1,4 @@
-# <cc> https://github.com/rainierez/MatrixKeypad_Python
+# <code reference> https://github.com/rainierez/MatrixKeypad_Python
 
 import RPi.GPIO as GPIO
 
