@@ -35,7 +35,6 @@ def run_voice():
     with open("c:/Framerun/webserver/mode.json", "r") as file:
         mode_data = json.load(file)
 
-    # json에 임시 비번 모드로 저장되어 있을 때
     if mode_data['mode'] == 'mode_2':
     
         data = request.data
