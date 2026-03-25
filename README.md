@@ -1,9 +1,9 @@
 # 한밭대학교 컴퓨터공학과 FrameRUN팀
 
 **팀 구성**
-- 20190001 구나영 
-- 20192139 고수연
-- 20201740 송가은
+- 20190001
+- 20192139
+- 20201740
 
 ## <u>Teamate</u> Project Background
 - ### 필요성 ![스크린샷 2023-10-27 211905](https://github.com/HBNU-SWUNIV/come-capstone23-framerun/assets/123061106/5a3119ec-695c-46f2-aede-43e7eabf853c)
